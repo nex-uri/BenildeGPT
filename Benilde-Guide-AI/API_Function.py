@@ -1,5 +1,4 @@
 import os
-
 from groq import Groq
 
 client = Groq(
@@ -7,9 +6,8 @@ client = Groq(
 )
 windows_username = os.environ.get('USERNAME')
 
-input_message = input(f"What would you want to talk about, {windows_username}?: ")
-
-completion = client.chat.completions.create(
+def chat_execute(input):
+    completion = client.chat.completions.create(
     model="openai/gpt-oss-20b",
     messages=[
       {
@@ -19,7 +17,9 @@ completion = client.chat.completions.create(
 
         "Your sole job is to provide users with a COMPREHENSIVE GUIDE to the entire campus. You must include details about the MAIN CAMPUSES, KEY BUILDINGS, AND EVERY MAJOR ADMINISTRATIVE AND STUDENT SERVICE OFFICE needed for a new or current student to navigate the school."
 
-        "Additionally, answer the user's question by selectively extracting information from your knowledge base below. DO NOT provide the full guide unless the user explicitly asks for it."
+        "Answer the user's question by selectively extracting information from your knowledge base below. DO NOT provide the full guide unless the user explicitly asks for it."
+
+        "Lastly, DO NOT discuss any topics that are outside your knowledge base."
 
         "Structure your response clearly by separating the information into these sections:\n"
         "1. History & Namesake: Provide a brief biography of the school's namesake, Saint Benilde Romancon, noting his dedication to teaching. Explain the college's founding, starting as the College of Career Development in 1980, and how it adopted the name De La Salle College of Saint Benilde in 1988."
@@ -43,8 +43,17 @@ completion = client.chat.completions.create(
     stop=None
 )
 
-print("\n")
-for chunk in completion:
-    print(chunk.choices[0].delta.content or "", end="")
-print("\n")
+    print("\n============================================================================\n")
+    for chunk in completion:
+        print(chunk.choices[0].delta.content or "", end="")
+    print("\n\n============================================================================\n")
 
+while(True):
+    input_message = input(f"What would you want to talk about, {windows_username}?: ")
+    
+    try:
+        print("[DEBUG]: The Message Input Has Been Executed To AI Chatbot!")
+        chat_execute(input_message)
+    except OSError as e:
+        print(f"Requesting To AI Chatbot Failed!")
+        print(f"Details: {e}")
