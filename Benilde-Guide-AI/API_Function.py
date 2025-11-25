@@ -5,6 +5,9 @@ from groq import Groq
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
 )
+windows_username = os.environ.get('USERNAME')
+
+input_message = input(f"What would you want to talk about, {windows_username}?: ")
 
 completion = client.chat.completions.create(
     model="openai/gpt-oss-20b",
@@ -29,7 +32,7 @@ completion = client.chat.completions.create(
       },
       {
         "role": "user",
-        "content": "who is benilde?"
+        "content": f"{input_message}"
       }
     ],
     temperature=1,
@@ -40,7 +43,8 @@ completion = client.chat.completions.create(
     stop=None
 )
 
+print("\n")
 for chunk in completion:
     print(chunk.choices[0].delta.content or "", end="")
-print("")
+print("\n")
 
