@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Python AI Image Generator", "Python AI Image Generator\Python AI Image Generator.pyproj", "{EC834FCC-4FF1-4606-AC7C-67FC269B7EA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC834FCC-4FF1-4606-AC7C-67FC269B7EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC834FCC-4FF1-4606-AC7C-67FC269B7EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EFC4505-33F7-46CD-921A-962F6B33FC77}
+	EndGlobalSection
+EndGlobal
