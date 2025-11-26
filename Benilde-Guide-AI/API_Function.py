@@ -2,7 +2,8 @@ import os
 from groq import Groq
 
 client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY"),
+    # api_key=os.environ.get("GROQ_API_KEY"),
+    api_key="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"
 )
 windows_username = os.environ.get('USERNAME')
 
@@ -52,7 +53,7 @@ while(True):
     input_message = input(f"What would you want to talk about, {windows_username}?: ")
     
     try:
-        print("[DEBUG]: The Message Input Has Been Executed To AI Chatbot!")
+        # print("[DEBUG]: The Message Input Has Been Executed To AI Chatbot!")
         chat_execute(input_message)
     except OSError as e:
         print(f"Requesting To AI Chatbot Failed!")
