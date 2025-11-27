@@ -51,7 +51,7 @@
 <br>1. If a user doesn’t type anything but still clicks send or enter, the program will ignore the user’s input.
 <br>2. The AI stops responding whenever there is a network issue or the API key is invalid. The error will show in the console rather than the chat interface.</br>
 
-# Key Features:
+# Its Key Features:
 <b>1. AI Chatbot Guide for Benilde Campus:</b> Utilization of the Groq API called openai/gpt-oss-20b whose purpose is to become an AI who guides users about Benilde. It is also a virtual assistant where all its knowledge is specifically designed around De La Salle College of Saint Benilde.</br>
 <br><b>2. Specialized Knowledge Base:</b>  The AI’s sole job is only for topics regarding De Lasalle College of Saint Benilde since it is pre-programed to have specific details around the college’s history (St. Benilde Romancon), campus locations (Taft, SDA, AKIC), academic hubs, specialized campuses, and student support services.</br>
 <br><b>3. Curriculum & Accreditation Awareness:</b> Has the means to provide accurate and precise information about the length of a trimester towards the undergraduate and graduate programs, SPaCE (Professional Education) Offerings and accreditation status while also including respective accreditation bodies (PAASCU, CHED and AUN-QA).</br>
