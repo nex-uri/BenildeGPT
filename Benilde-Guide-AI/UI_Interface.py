@@ -119,8 +119,11 @@ def message_sent(event):
     message_given = Input_Text_Box.get("1.0", "end-1c").strip()
     chat_history_given = chat_history.get("1.0", "end-1c").strip()
     placeholder_text = Input_Text_Box.get("1.0", "end-1c").strip()
+    
+    if placeholder_text == PLACEHOLDER_TEXT:
+        pass
 
-    if message_given and not chat_history_given:
+    elif message_given and not chat_history_given:
         chat_history.config(state=NORMAL)
         chat_history.insert(END, f"{os.environ.get('USERNAME')}: ", "user_name_tag")
         chat_history.insert(END, f"{message_given}\n\n")
