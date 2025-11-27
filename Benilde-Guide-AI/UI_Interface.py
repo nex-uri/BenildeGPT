@@ -1,4 +1,4 @@
-#   In order to make this application work, you MUST NEED to these REQUIREMENTS below:
+#   In order to make this application work, you MUST NEED to do these REQUIREMENTS below:
 #       - Go to your terminal (or in Windows Powershell Administrator) and type "pip install groq" and "pip install pillow". Reboot your device once
 #           it has been installed.
 
