@@ -123,7 +123,7 @@ def message_sent(event):
     if message_given and not chat_history_given:
         chat_history.config(state=NORMAL)
         chat_history.insert(END, f"{os.environ.get('USERNAME')}: ", "user_name_tag")
-        chat_history.insert(END, f"{message_given}\n\n")
+        chat_history.insert(END, f"\n\n")
         chat_history.insert(END, f"Benilde Chatbot: ", "ai_name_tag")
 
         chat_execute(message_given, update_chat_history)
@@ -139,7 +139,7 @@ def message_sent(event):
     elif message_given and chat_history_given:
         chat_history.config(state=NORMAL)
         chat_history.insert(END, f"\n\n\n{os.environ.get('USERNAME')}: ", "user_name_tag")
-        chat_history.insert(END, f"{message_given}\n\n")
+        chat_history.insert(END, f"\n\n")
         chat_history.insert(END, "Benilde Chatbot: ", "ai_name_tag")
 
         chat_execute(message_given, update_chat_history)

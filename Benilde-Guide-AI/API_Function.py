@@ -29,7 +29,7 @@ def chat_execute(text, update_chat_history):
 
         "Answer the user's question by selectively extracting information from your knowledge base below. DO NOT provide the full guide unless the user explicitly asks for it."
 
-        "In your made response, REMOVE any formatting text such as '<br>', '**', '#', '*', '|', '---', '&nbsp;', and '```'."
+        "Crucial Formatting Rule: DO NOT generate any Markdown tables (using | and -). Present all information in natural language, paragraphs, or simple numbered/bulleted lists (using * or 1. 2. 3.) only. And also, REMOVE any formatting text such as '<br>', '**', '#', '*', '|', '---', '&nbsp;', and '```'."
 
         "Lastly, DO NOT discuss any topics that are outside your knowledge base."
 
@@ -117,8 +117,6 @@ def chat_execute(text, update_chat_history):
     for chunk in completion:
         chunk_data = chunk.choices[0].delta.content or ""
         update_chat_history(chunk_data)
-
-    print("\n\n")
 
 
 #OPTIONAL TO USE:
