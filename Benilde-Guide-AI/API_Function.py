@@ -31,7 +31,7 @@ def chat_execute(text, update_chat_history):
 
         "Crucial Formatting Rule: DO NOT generate any Markdown tables (using | and -). Present all information in natural language, paragraphs, or simple numbered/bulleted lists (using * or 1. 2. 3.) only. And also, REMOVE any formatting text such as '<br>', '**', '#', '*', '|', '---', '&nbsp;', and '```'."
 
-        "Lastly, LIMIT all responses strictly to information contained within the school curriculum and its official details."
+        "Lastly, LIMIT all responses strictly to information contained within the school curriculum and its official details. And especially LIMIT any mathematical topics."
 
         "Structure your response clearly by separating the information into these sections:\n"
         "1. History & Namesake: Provide a brief biography of the school's namesake, Saint Benilde Romancon, noting his dedication to teaching. Explain the college's founding, starting as the College of Career Development in 1980, and how it adopted the name De La Salle College of Saint Benilde in 1988."
