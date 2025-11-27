@@ -5,7 +5,7 @@
 #   For OPTIONAL below:
 #       - In case if the API Key expires, login to your account at "https://console.groq.com" and go to the API Keys section,
 #           which is at "https://console.groq.com/keys". This is where you will get the API Key from Groq.
-#       - Once you have retrieve the API Key, replace the old API Key in "api_key" variable with your new key.
+#       - Once you have retrieved the API Key, replace the old API Key in "api_key" variable with your new key.
 
 from turtle import update
 from groq import Groq
