@@ -7,15 +7,20 @@
 #           which is at "https://console.groq.com/keys". This is where you will get the API Key from Groq.
 #       - Once you have retrieve the API Key, replace the old API Key in "api_key" variable with your new key.
 
+
+#IMPORT MODULES
 import os
 from tkinter import *
 from API_Function import chat_execute
 from PIL import ImageTk
 from PIL import Image
 
+
+#GUI INITIALIZATION
 window = Tk()
-window.geometry("420x420")
+window.geometry("620x620")
 window.resizable(False, False)
+
 
 icon = PhotoImage(file='benilde_icon_1.png')
 window.iconphoto(True, icon)
@@ -23,14 +28,20 @@ window.title("Benilde AI")
 
 window.config(background="#202024")
 
-PLACEHOLDER_TEXT = "Enter your message here"
 
-MIN_LINES = 1
-
+#GUI INITIALIZATION: ROWS AND COLUMNS
 window.grid_columnconfigure(0, weight=1) 
 window.grid_columnconfigure(1, weight=0) 
 window.grid_rowconfigure(0, weight=1) 
 
+
+#DECLARATIONS
+PLACEHOLDER_TEXT = "Enter your message here"
+
+MIN_LINES = 1
+
+
+#LABELS AND PANELS INITIALIZATION
 chat_history = Text(
     window, 
     height=20, 
@@ -53,7 +64,7 @@ Input_Text_Box = Text(
     wrap=WORD,
     bd=0,
 )
-Input_Text_Box.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="w")
+Input_Text_Box.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="we")
 
 icon = Image.open("benilde_icon_2.png")
 resized_icon = icon.resize((50, 50), Image.Resampling.LANCZOS)
@@ -76,6 +87,7 @@ Labeling = Label(
 Labeling.grid(row=2, column=0, columnspan=2, padx=67, pady=10, sticky="w")
 
 
+#COLOR TEXT INITIALIZATION
 Input_Text_Box.tag_config(
     "placeholder_tag",
     foreground="#999494"
@@ -91,6 +103,8 @@ chat_history.tag_configure(
     font=("Arial", 12, "bold")
 )
 
+
+#FUNCTIONS: GATHERING AI RESPONSES
 def update_chat_history(chunk):
     chat_history.config(state=NORMAL)
     chat_history.insert(END, chunk) 
@@ -99,6 +113,8 @@ def update_chat_history(chunk):
 
     window.update()
 
+
+#FUNCTIONS: REQUESTING API TO SEND BACK HERE WITH AI RESPONSES
 def message_sent(event):
     message_given = Input_Text_Box.get("1.0", "end-1c").strip()
     chat_history_given = chat_history.get("1.0", "end-1c").strip()
@@ -137,6 +153,8 @@ def message_sent(event):
 
     return "break"
 
+
+#FUNCTIONS: REMOVING PLACEHOLDERTEXT
 def remove_placeholdertext(event):
     placeholder_text = Input_Text_Box.get("1.0", "end-1c").strip()
 
@@ -144,16 +162,19 @@ def remove_placeholdertext(event):
         Input_Text_Box.delete("1.0", END)
         Input_Text_Box.unbind('<FocusIn>', remove_placeholdertext)
 
+
+#FUNCTIONS: ADDING PLACEHOLDERTEXT
 def add_placeholdertext(event=None):
 
     if not Input_Text_Box.get("1.0", "end-1c").strip():
         Input_Text_Box.insert("1.0", PLACEHOLDER_TEXT, "placeholder_tag")
 
 
+#SEND BUTTON INITIALIZATION
 send_button = Button(
     window, 
     text="Send",
-    font=("Arial", 9, "bold"),
+    font=("Arial", 23, "bold"),
     bd=0,
     foreground="#ffffff",
     background="#36363d",
@@ -163,9 +184,15 @@ send_button = Button(
 send_button.grid(row=2, column=0, columnspan=1, padx=10, pady=10, sticky="e")
 
 
+#BINDING
 Input_Text_Box.bind('<Return>', message_sent)
 Input_Text_Box.bind('<FocusIn>', remove_placeholdertext)
 Input_Text_Box.bind('<FocusOut>', add_placeholdertext)
 
+
+#PLACEHOLDERTEXT INITIALIZATION
 add_placeholdertext()
+
+
+#EXECUTING GUI
 window.mainloop()
