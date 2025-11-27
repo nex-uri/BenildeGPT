@@ -24,7 +24,7 @@ window.resizable(False, False)
 
 icon = PhotoImage(file='benilde_icon_1.png')
 window.iconphoto(True, icon)
-window.title("Benilde AI")
+window.title("BenildeGPT")
 
 window.config(background="#202024")
 
@@ -79,7 +79,7 @@ icon_label.grid(row=0, column=0, sticky="w")
 
 Labeling = Label(
     window,
-    text="Benilde AI",
+    text="BenildeGPT",
     foreground="#ffffff",
     background="#202024",
     font=("Arial", 25, "bold")
