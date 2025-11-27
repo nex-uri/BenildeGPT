@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ec834fcc-4ff1-4606-ac7c-67fc269b7ea3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>API_Function.py</StartupFile>
+    <StartupFile>UI_Interface.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
