@@ -163,7 +163,6 @@ def remove_placeholdertext(event):
 
     if placeholder_text == PLACEHOLDER_TEXT:
         Input_Text_Box.delete("1.0", END)
-        Input_Text_Box.unbind('<FocusIn>', remove_placeholdertext)
 
 
 #FUNCTIONS: ADDING PLACEHOLDERTEXT
